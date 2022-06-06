@@ -8,7 +8,9 @@ startdate = '01/01/1954';
 enddate = '01/01/2019';
 f = fred
 Y = fetch(f,'GDPC1',startdate,enddate)
+C = fetch(f,'PCECC96',startdate,enddate)
 y = log(Y.Data(:,2));
+c = log(C.Data(:,2));
 q = Y.Data(:,1);
 
 T = size(y,1);
@@ -31,9 +33,11 @@ for i=3:T-2
 end
 
 tauGDP = A\y;
+tauPCE = A\c;
 
 % detrended GDP
 ytilde = y-tauGDP;
+ctilde = c-tauPCE;
 
 % plot detrended GDP
 dates = 1954:1/4:2019.1/4; zerovec = zeros(size(y));
@@ -45,6 +49,8 @@ datetick('x', 'yyyy-qq')
 % compute sd(y), sd(c), rho(y), rho(c), corr(y,c) (from detrended series)
 ysd = std(ytilde)*100;
 yrho = corrcoef(ytilde(2:T),ytilde(1:T-1)); yrho = yrho(1,2);
+corryc = corrcoef(ytilde(1:T),ctilde(1:T)); corryc = corryc(1,2);
 
 disp(['Percent standard deviation of detrended log real GDP: ', num2str(ysd),'.']); disp(' ')
-
+disp(['Serial correlation of detrended log real GDP: ', num2str(yrho),'.']); disp(' ')
+disp(['Contemporaneous correlation between detrended log real GDP and PCE: ', num2str(corryc),'.']);

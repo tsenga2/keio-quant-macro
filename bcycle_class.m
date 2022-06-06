@@ -86,4 +86,3 @@ xlabel('Time')
 title('Cyclical components')
 grid on;
 
-

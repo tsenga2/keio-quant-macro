@@ -13,6 +13,10 @@ y = log(Y.Data(:,2));
 c = log(C.Data(:,2));
 q = Y.Data(:,1);
 
+% load y.mat
+% load c.mat
+% load q.mat
+
 T = size(y,1);
 
 % Hodrick-Prescott filter
@@ -54,3 +58,6 @@ corryc = corrcoef(ytilde(1:T),ctilde(1:T)); corryc = corryc(1,2);
 disp(['Percent standard deviation of detrended log real GDP: ', num2str(ysd),'.']); disp(' ')
 disp(['Serial correlation of detrended log real GDP: ', num2str(yrho),'.']); disp(' ')
 disp(['Contemporaneous correlation between detrended log real GDP and PCE: ', num2str(corryc),'.']);
+
+
+

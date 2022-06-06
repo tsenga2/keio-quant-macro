@@ -64,7 +64,7 @@ ylabel('Log of real GDP (billions of chained 2012 dollars)')
 xlabel('')
 grid on
 
-[trend, cycle] = hpfilter(log(y), 160);
+[trend, cycle] = hpfilter(log(y), 1600);
 
 % compute sd(y) (from detrended series)
 ysd = std(cycle)*100;

@@ -52,10 +52,16 @@ grid on;
 
 
 %%
-realGDP = fetch(f,'GDPCA',startdate,enddate)      %Real Gross Domestic Product
-year = realGDP.Data(:,1);
-y = realGDP.Data(:,2);
+% realGDP = fetch(f,'GDPCA',startdate,enddate)      %Real Gross Domestic Product
+% year = realGDP.Data(:,1);
+% y = realGDP.Data(:,2);
 
+clc
+clear all
+close all
+
+load y.mat
+year = linspace(1, 261, 261);
 
 figure
 plot(year, log(y))
@@ -64,7 +70,8 @@ ylabel('Log of real GDP (billions of chained 2012 dollars)')
 xlabel('')
 grid on
 
-[trend, cycle] = hpfilter(log(y), 1600);
+% [trend, cycle] = hpfilter(log(y), 1600);
+[trend, cycle] = qmacro_hpfilter(log(y), 1600);
 
 % compute sd(y) (from detrended series)
 ysd = std(cycle)*100;

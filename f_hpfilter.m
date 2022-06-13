@@ -6,16 +6,16 @@ close all
 % load the data
 startdate = '01/01/1954';
 enddate = '01/01/2019';
-f = fred
-Y = fetch(f,'GDPC1',startdate,enddate)
-C = fetch(f,'PCECC96',startdate,enddate)
-y = log(Y.Data(:,2));
-c = log(C.Data(:,2));
-q = Y.Data(:,1);
+% f = fred
+% Y = fetch(f,'GDPC1',startdate,enddate)
+% C = fetch(f,'PCECC96',startdate,enddate)
+% y = log(Y.Data(:,2));
+% c = log(C.Data(:,2));
+% q = Y.Data(:,1);
 
-% load y.mat
-% load c.mat
-% load q.mat
+load y.mat
+load c.mat
+load q.mat
 
 T = size(y,1);
 

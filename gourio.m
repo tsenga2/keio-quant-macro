@@ -21,7 +21,7 @@ delta = 0.167;
 r = 0.04;
 rho = 0.55;
 mu = 0;
-sigma = 0.15;
+sigma = 0.35;
 
 nk = 100;
 kmin = 0.001;
@@ -32,11 +32,18 @@ nz = 5;
 
 disp('discrete-state approximation to AR1: ')
 disp('log(Z) = rho*log(Z) + (1-rho)*mu + sigma*epsilon')
-[z,Pie] = tauchen(nz,mu,rho,sigma,2.25);
-z
-Z = exp(z)
-Pie
+%[z,Pie] = tauchen(nz,mu,rho,sigma,2.25);
+%z
+%Z = exp(z)
+%Pie
 
+z = [-0.942927835640568, -0.471463917820284, 0, 0.471463917820284, 0.942927835640568]
+Z = exp(z)
+Pie = [0.295006943581673, 0.495512193838656, 0.193910257281772, 0.015339978264313, 0.000230627033585;
+       0.100327482548650, 0.426521772368601, 0.394527290061208, 0.075746025821068, 0.002877429200473;
+       0.021662684832732, 0.228645617148758, 0.499383396037020, 0.228645617148758, 0.021662684832732;
+       0.002877429200473, 0.075746025821068, 0.394527290061208, 0.426521772368602, 0.100327482548650;
+       0.000230627033585, 0.015339978264313, 0.193910257281772, 0.495512193838656, 0.295006943581673;]
 
 disp('VFI')
 v = zeros(nz,nk);
@@ -82,10 +89,9 @@ end
 
 figure('Name','Gourio2008','NumberTitle','off'); 
 subplot(2,2,1)
-plot(Z,g_vfi, '--o', 'LineWidth',2);
+plot(Z,g_vfi, '--or', 'LineWidth',1);
 hold on
-plot(Z,g_hand,'LineWidth',3);
-legend('numerical solution', 'analytical solution')
+plot(Z,g_hand,'-+b','LineWidth',3);
 title('Optimal policy','fontsize',10)
 
 subplot(2,2,2)
@@ -169,43 +175,8 @@ logtfp = mu + 0.5*(sigma^2/(1-rho)) ...
 fprintf('log(Y) %6.4f log(K) %6.4f log(TFP) %6.4f  ',[logy, logk, logtfp])
 
 
-%% Function: (1) tauchen (2) gridlookup
-function [Z,Zprob] = tauchen(nZ,a,rho,sigma,m)
-
-Z = zeros(nZ,1);
-Zprob = zeros(nZ,nZ);
-Z(nZ) = m * sqrt(sigma^2 / (1 - rho^2));
-Z(1) = -Z(nZ);
-zstep = (Z(nZ) - Z(1)) / (nZ - 1);
-
-for i=2:(nZ-1)
-  Z(i) = Z(1) + zstep * (i - 1);
-end 
-
-Z = Z + a / (1-rho);
-
-for j = 1:nZ
-  for k = 1:nZ
-    if k == 1
-      Zprob(j,k) = cdf('norm',(Z(1) - a - rho * Z(j) + zstep / 2) / sigma,0,1);
-    elseif k == nZ
-      Zprob(j,k) = 1 - cdf('norm',(Z(nZ) - a - ... 
-                     rho * Z(j) - zstep / 2) / sigma,0,1);
-    else
-      Zprob(j,k) = ...
-            cdf('norm',(Z(k) - a - rho * Z(j) + zstep / 2) / sigma,0,1) - ...
-            cdf('norm',(Z(k) - a - rho * Z(j) - zstep / 2) / sigma,0,1);
-    end
-  end
-end
-
-Z = Z';
-
-end
-
-
-
-function [ixlow, ixweight] = gridlookup(gridnum,xdist,xval)
+%% Function: gridlookup
+function [ixlow, ixweight]  = gridlookup(gridnum,xdist,xval)
 
     ixhigh = gridnum;
     ixlow = 1;

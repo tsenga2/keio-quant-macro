@@ -6,7 +6,7 @@ close all
 
 f = fred
 startdate = '01/01/1954';
-enddate = '01/01/2019';
+enddate = '01/01/2022';
 
 d1 = fetch(f,'GCE',startdate,enddate)   
 d2 = fetch(f,'GPDI',startdate,enddate) 

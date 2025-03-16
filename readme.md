@@ -62,6 +62,10 @@ Students will need to install or have access to:
 - Git version control
 - A text editor of your choice (VSCode recommended)
 
+## Environment Setup
+
+This course requires setting up specific tools on your computer. For detailed instructions for both Windows and macOS, please see the [Setup Guide](SETUP.md).
+
 ## Repository Structure
 
 - Weekly folders contain materials corresponding to each week's topic

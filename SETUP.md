@@ -4,6 +4,7 @@ This guide will help you set up the necessary tools and environment for the Keio
 
 ## Required Software
 
+For both Windows and macOS:
 - **Python** (3.8 or newer)
 - **Git** (version control)
 - **Jupyter Notebooks**
@@ -125,7 +126,7 @@ To fully participate in the course, you'll need a GitHub account to store your c
 
 2. **Configure Git with Your Identity**
    - Open Terminal (macOS) or Git Bash (Windows)
-   - Set your name:
+   - Set your name (use the same format on both platforms):
      ```
      git config --global user.name "Your Name"
      ```
@@ -136,9 +137,7 @@ To fully participate in the course, you'll need a GitHub account to store your c
 
 ## Create Your Own Project Repository
 
-There are two easy ways to create and manage your GitHub repositories:
-
-### Option 1: Using VS Code's Built-in Git Features (Recommended for beginners)
+The easiest way to create and manage your GitHub repositories is using VS Code:
 
 1. **Create a Repository on GitHub**
    - Go to [GitHub](https://github.com/) and log in
@@ -152,73 +151,53 @@ There are two easy ways to create and manage your GitHub repositories:
 2. **Clone the Repository Using VS Code**
    - Open VS Code
    - If you're on the welcome page, click on "Clone Git Repository..."
-   - If you're not on the welcome page, go to View → Command Palette (or press Ctrl+Shift+P / Cmd+Shift+P)
-   - Type "Git: Clone" and select it
+   - If you're not on the welcome page:
+     - On Windows: Press Ctrl+Shift+P to open the command palette
+     - On macOS: Press Command+Shift+P to open the command palette
+     - Type "Git: Clone" and select it
    - Paste the URL of your GitHub repository (e.g., https://github.com/your-username/my-macro-project.git)
    - Select the `keio-macro` folder as the destination
-   - When prompted, sign in to your GitHub account
+   - When prompted, sign in to your GitHub account (this will open in your browser)
    - VS Code will clone the repository and ask if you want to open it - click "Open"
 
 3. **Make Changes and Push to GitHub**
-   - Create or modify files in VS Code
+   - Open the repository in VS Code if it's not already open
+   - Open README.md by clicking on it in the file explorer (left side of VS Code)
+   - Edit the README.md file to add information about yourself and the course
+   - For example, add the following lines:
+     ```
+     # My Quantitative Macroeconomics Project
+
+     This repository contains my work for the Keio Quantitative Macroeconomics course.
+
+     ## About Me
+     [Write a brief introduction about yourself]
+
+     ## Course Topics
+     - Business Cycles
+     - Growth Accounting
+     - Investment
+     - Productivity
+     ```
+   - Save the file (Ctrl+S on Windows or Command+S on macOS)
    - Open the Terminal in VS Code: Terminal → New Terminal
    - Check which files have been changed:
      ```
      git status
      ```
-   - Stage specific files (better practice than adding everything):
+   - Stage the README.md file:
      ```
      git add README.md
      ```
    - Commit your changes with a descriptive message:
      ```
-     git commit -m "Update README with project description"
+     git commit -m "Update README with personal information"
      ```
    - Push your changes to GitHub:
      ```
      git push
      ```
-
-### Option 2: Using Command Line
-
-1. **Create a Repository on GitHub**
-   - Go to [GitHub](https://github.com/) and log in
-   - Click the "+" icon in the top right, then "New repository"
-   - Name it (e.g., "my-macro-project")
-   - Make it private if you prefer
-   - Check "Add a README file" to initialize the repository
-   - Click "Create repository"
-
-2. **Clone the Repository to Your Computer**
-   - On your repository page, click the green "Code" button
-   - Copy the HTTPS URL (e.g., `https://github.com/your-username/my-macro-project.git`)
-   - In Terminal (macOS) or Git Bash (Windows), navigate to your course folder:
-     ```
-     cd ~/keio-macro
-     ```
-   - Clone the repository:
-     ```
-     git clone https://github.com/your-username/my-macro-project.git
-     ```
-
-3. **Make and Push Changes**
-   - Make changes to the files in your repository
-   - Check which files have been changed:
-     ```
-     git status
-     ```
-   - Stage specific files:
-     ```
-     git add README.md
-     ```
-   - Commit changes:
-     ```
-     git commit -m "Update README with project description"
-     ```
-   - Push to GitHub:
-     ```
-     git push
-     ```
+   - Visit your GitHub repository page in a browser to verify your changes appear online
 
 ## Verification and Testing
 
@@ -226,7 +205,9 @@ After installation, test your environment:
 
 1. **Test Python and Required Packages**
    - Open Terminal (macOS) or Git Bash (Windows)
-   - Run Python: `python` (Windows) or `python3` (macOS)
+   - Run Python:
+     - On Windows: `python`
+     - On macOS: `python3`
    - Try importing key packages:
      ```python
      import numpy as np
@@ -237,16 +218,20 @@ After installation, test your environment:
      ```
 
 2. **Launch Jupyter Notebook**
-   - In Terminal/Git Bash: `jupyter notebook`
+   - Open Terminal (macOS) or Git Bash (Windows)
+   - Run:
+     - On Windows: `jupyter notebook`
+     - On macOS: `jupyter notebook`
    - This should open Jupyter in your default web browser
 
 ## Alternative: Google Colab
 
-If you encounter persistent issues with local setup:
+If you encounter persistent issues with local setup on either platform:
 
 1. Go to [Google Colab](https://colab.research.google.com/)
 2. Sign in with your Google account
 3. File → Open notebook → GitHub → paste the course repository URL
+4. This works on any operating system with a modern web browser
 
 ## Troubleshooting Common Issues
 
@@ -267,7 +252,7 @@ If you encounter persistent issues with local setup:
 ## Getting Help
 
 If you encounter issues with setup:
-1. Check the troubleshooting section
+1. Check the troubleshooting section for your operating system
 2. Search for the specific error message online
 3. Ask for help during the Week 2 session
 4. Post your issue (with error details) on the course platform

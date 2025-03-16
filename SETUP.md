@@ -10,9 +10,7 @@ This guide will help you set up the necessary tools and environment for the Keio
 - **Text editor** (VSCode recommended)
 - **Command-line tools**
 
-## Setup Instructions
-
-### Windows
+## Setup Instructions for Windows
 
 1. **Install Git with Git Bash**
    - Download and install Git from [Git-SCM](https://git-scm.com/download/win)
@@ -44,10 +42,6 @@ This guide will help you set up the necessary tools and environment for the Keio
    - Download and install from [Python.org](https://www.python.org/downloads/windows/)
    - During installation, check "Add Python to PATH"
    - Verify installation by opening Git Bash and typing: `python --version`
-
-3. **Install VSCode**
-   - Download and install from [Visual Studio Code](https://code.visualstudio.com/)
-   - Install the Python extension from the Extensions marketplace
 
 4. **Setup Jupyter and Required Packages**
    - Open Git Bash and run:
@@ -84,40 +78,7 @@ This guide will help you set up the necessary tools and environment for the Keio
      ls
      ```
 
-6. **Create Your Own Project Repository**
-   - Navigate back to your course directory:
-     ```
-     cd ~/keio-macro
-     ```
-   - Create a folder for your personal work:
-     ```
-     mkdir my-macro-project
-     cd my-macro-project
-     ```
-   - Initialize it as a Git repository:
-     ```
-     git init
-     ```
-   - Create a README file:
-     ```
-     echo "# My Quantitative Macroeconomics Project" > README.md
-     ```
-   - Check the status of your repository:
-     ```
-     git status
-     ```
-   - Add and commit your README:
-     ```
-     git add README.md
-     git commit -m "Initial commit"
-     ```
-   - To push to your own GitHub, create a repository on GitHub.com first, then:
-     ```
-     git remote add origin https://github.com/your-username/my-macro-project.git
-     git push -u origin main
-     ```
-
-### macOS
+## Setup Instructions for macOS
 
 1. **Create a Course Directory**
    - Open Terminal
@@ -129,49 +90,134 @@ This guide will help you set up the necessary tools and environment for the Keio
    - In Terminal: `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
    - Follow terminal prompts to complete installation
 
-2. **Install Python**
+3. **Install Python**
    - In Terminal: `brew install python`
    - Verify installation: `python3 --version`
 
-3. **Install Git**
+4. **Install Git**
    - In Terminal: `brew install git`
    - Verify installation: `git --version`
 
-4. **Install VSCode**
+5. **Install VSCode**
    - Download and install from [Visual Studio Code](https://code.visualstudio.com/)
    - Install the Python extension from the Extensions marketplace
 
-5. **Setup Jupyter and Required Packages**
+6. **Setup Jupyter and Required Packages**
    - In Terminal:
      ```
      pip3 install jupyter numpy pandas matplotlib scipy statsmodels plotly
      ```
 
-6. **Clone the Course Repository**
+7. **Clone the Course Repository**
    - In Terminal, navigate to your course directory: `cd ~/keio-macro`
    - Clone the repository: `git clone https://github.com/tsenga2/keio-quant-macro.git`
    - Navigate into the repository: `cd keio-quant-macro`
 
-7. **Create Your Own Project Repository**
-   - Inside your `keio-macro` folder, create a folder for your personal work:
+## GitHub Account Setup
+
+To fully participate in the course, you'll need a GitHub account to store your code and collaborate:
+
+1. **Create a GitHub Account**
+   - Go to [GitHub](https://github.com/)
+   - Click "Sign up" and follow the registration process
+   - Choose a username that you're comfortable using professionally
+   - Verify your email address when prompted
+
+2. **Configure Git with Your Identity**
+   - Open Terminal (macOS) or Git Bash (Windows)
+   - Set your name:
      ```
-     mkdir my-macro-project
-     cd my-macro-project
+     git config --global user.name "Your Name"
      ```
-   - Initialize it as a Git repository:
+   - Set your email (use the same email as your GitHub account):
      ```
-     git init
+     git config --global user.email "your.email@example.com"
      ```
-   - Create a README file:
+
+## Create Your Own Project Repository
+
+There are two easy ways to create and manage your GitHub repositories:
+
+### Option 1: Using VS Code's Built-in Git Features (Recommended for beginners)
+
+1. **Create a Repository on GitHub**
+   - Go to [GitHub](https://github.com/) and log in
+   - Click the "+" icon in the top right, then "New repository"
+   - Name it (e.g., "my-macro-project")
+   - Add a short description (optional)
+   - Make it private if you prefer
+   - Check "Add a README file" to initialize the repository
+   - Click "Create repository"
+
+2. **Clone the Repository Using VS Code**
+   - Open VS Code
+   - If you're on the welcome page, click on "Clone Git Repository..."
+   - If you're not on the welcome page, go to View → Command Palette (or press Ctrl+Shift+P / Cmd+Shift+P)
+   - Type "Git: Clone" and select it
+   - Paste the URL of your GitHub repository (e.g., https://github.com/your-username/my-macro-project.git)
+   - Select the `keio-macro` folder as the destination
+   - When prompted, sign in to your GitHub account
+   - VS Code will clone the repository and ask if you want to open it - click "Open"
+
+3. **Make Changes and Push to GitHub**
+   - Create or modify files in VS Code
+   - Open the Terminal in VS Code: Terminal → New Terminal
+   - Check which files have been changed:
      ```
-     echo "# My Quantitative Macroeconomics Project" > README.md
+     git status
+     ```
+   - Stage specific files (better practice than adding everything):
+     ```
      git add README.md
-     git commit -m "Initial commit"
      ```
-   - To push to your own GitHub, create a repository on GitHub.com first, then:
+   - Commit your changes with a descriptive message:
      ```
-     git remote add origin https://github.com/your-username/my-macro-project.git
-     git push -u origin main
+     git commit -m "Update README with project description"
+     ```
+   - Push your changes to GitHub:
+     ```
+     git push
+     ```
+
+### Option 2: Using Command Line
+
+1. **Create a Repository on GitHub**
+   - Go to [GitHub](https://github.com/) and log in
+   - Click the "+" icon in the top right, then "New repository"
+   - Name it (e.g., "my-macro-project")
+   - Make it private if you prefer
+   - Check "Add a README file" to initialize the repository
+   - Click "Create repository"
+
+2. **Clone the Repository to Your Computer**
+   - On your repository page, click the green "Code" button
+   - Copy the HTTPS URL (e.g., `https://github.com/your-username/my-macro-project.git`)
+   - In Terminal (macOS) or Git Bash (Windows), navigate to your course folder:
+     ```
+     cd ~/keio-macro
+     ```
+   - Clone the repository:
+     ```
+     git clone https://github.com/your-username/my-macro-project.git
+     ```
+
+3. **Make and Push Changes**
+   - Make changes to the files in your repository
+   - Check which files have been changed:
+     ```
+     git status
+     ```
+   - Stage specific files:
+     ```
+     git add README.md
+     ```
+   - Commit changes:
+     ```
+     git commit -m "Update README with project description"
+     ```
+   - Push to GitHub:
+     ```
+     git push
      ```
 
 ## Verification and Testing

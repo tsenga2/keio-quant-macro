@@ -49,6 +49,95 @@ This course introduces students to quantitative methods in macroeconomics, combi
 
 Course materials, including lecture notes, code examples, and assignments, will be updated weekly in this repository.
 
+## UnixとGit チートシート (初心者向け)
+
+### Unix コマンド
+
+#### 基本操作
+
+* `pwd`: 現在の場所を表示。
+* `cd "ディレクトリ名"`: 指定したディレクトリに移動。
+    * 例: `cd documents`
+* `cd ..`: 一つ上の階層へ移動。
+* `ls`: ファイルやディレクトリを一覧表示。
+    * `ls -l`: 詳細表示。
+* `cp "ファイル名" "コピー先"`: ファイルをコピー。
+    * 例: `cp my_file.txt /home/user/backup/`
+* `mkdir "ディレクトリ名"`: 新しいディレクトリを作成。
+    * 例: `mkdir new_folder`
+* `rm "ファイル名"`: ファイルを削除。**注意！**
+    * 例: `rm unwanted_file.txt`
+* `rm -r "ディレクトリ名"`: ディレクトリを削除。**注意！**
+    * 例: `rm -r old_folder`
+* `mv "古い名前" "新しい名前"`: ファイル名を変更。
+    * 例: `mv old_file.txt new_file.txt`
+* `mv "ファイル名" "移動先"`: ファイルを移動
+    * 例: `mv my_file.txt /home/user/documents/`
+* `cat "ファイル名"`: ファイルの内容を表示。
+* `less "ファイル名"`: ファイルの内容をページごとに表示。
+* `head "ファイル名"`: ファイルの最初の部分を表示。
+* `tail "ファイル名"`: ファイルの最後の部分を表示。
+
+#### ファイル処理
+
+* `cut -d"区切り文字" -fフィールド番号 "ファイル名"`: ファイルから指定したフィールドを抽出。
+    * 例: `cut -d"," -f1,3 data.csv`  (カンマ区切りで 1 番目と 3 番目のフィールドを抽出)
+
+#### 検索
+
+* `grep "パターン" "ファイル名"`: ファイル内で検索。
+    * 例: `grep "エラー" error.log`
+* `find "パス" -name "ファイル名"`: ファイルを名前で検索。
+    * 例: `find . -name "my_file.txt"`
+
+### Git コマンド
+
+#### 基本操作
+
+* `git clone "リポジトリ URL"`: リポジトリをコピー。
+    * 例: `git clone https://github.com/user/my_repo.git`
+* `git init`: 新しいリポジトリを作成。
+
+#### 変更の扱い
+
+* `git status`: 変更状況を確認。
+* `git add "ファイル名"`: ファイルをステージング。
+    * `git add .`: すべての変更をステージング。
+* `git commit -m "コミットメッセージ"`: 変更を記録。
+    * 例: `git commit -m "バグ修正"`
+* `git diff "ファイル名"`: ファイルの変更箇所を表示。
+    * `git diff`: まだステージングしていない変更を表示
+    * `git diff --staged`: ステージング済みの変更を表示
+
+#### リモートリポジトリ
+
+* `git remote add origin "リポジトリ URL"`: リモートリポジトリを追加。
+* `git push`: リモートリポジトリにアップロード。
+    * `git push origin "ブランチ名"`: 特定のブランチをプッシュ。
+* `git pull`: リモートリポジトリからダウンロード。
+    * `git pull origin "ブランチ名"`: 特定のブランチをプル。
+* `git fetch`: リモートリポジトリからダウンロード (マージはしない)。
+
+#### 変更の取り消し
+
+* `git reset HEAD "ファイル名"`: ステージングを取り消し。
+* `git checkout -- "ファイル名"`: ファイルの変更を破棄。
+* `git reset --soft "コミットハッシュ"`: コミットを巻き戻す (変更は保持)。
+* `git reset --hard "コミットハッシュ"`: コミットを巻き戻す (変更は破棄)。 **注意！**
+* `git revert "コミットハッシュ"`: コミットを取り消す新しいコミットを作成。
+
+#### 情報
+
+* `git log`: コミット履歴を表示。
+    * `git log --oneline`: コミット履歴を一行で表示。
+
+#### 設定
+
+* `git config --global user.name "あなたの名前"`: Git に名前を設定。
+* `git config --global user.email "メールアドレス"`: Git にメールアドレスを設定。
+
+プレースホルダーを実際の値に置き換えてください。
+
 ## Prerequisites
 
 - Basic knowledge of macroeconomics
@@ -65,12 +154,6 @@ Students will need to install or have access to:
 ## Environment Setup
 
 This course requires setting up specific tools on your computer. For detailed instructions for both Windows and macOS, please see the [Setup Guide](SETUP.md).
-
-## Repository Structure
-
-- Weekly folders contain materials corresponding to each week's topic
-- Code samples are provided in Python/Jupyter Notebook format
-- Lecture notes are available as PDF files
 
 ## Archived Materials
 

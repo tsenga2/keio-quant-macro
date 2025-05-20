@@ -4,7 +4,7 @@ import numpy as np
 pwt90 = pd.read_stata('https://www.rug.nl/ggdc/docs/pwt90.dta')
 
 oecd_countries = [
-    'Japan', 'United States',
+    'United Kingdom', 'United States',
 ]
 
 data = pwt90[

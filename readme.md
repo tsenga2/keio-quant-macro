@@ -63,12 +63,9 @@ Course materials are organized by type:
 ### **Slides/**
 - **Beamer slides**: Will be added for Weeks 3-4 (ODE/PDE solving and applications)
 
-### **Code-Examples/**
+### **Codes/**
 - **MATLAB implementations**: Neural network code for ODE and PDE solving
 - **Python notebooks**: Data analysis, visualization, and alternative implementations
-
-### **Data/**
-- **Sample datasets**: Economic time series and other data for analysis
 
 All materials will be updated weekly throughout the course.
 

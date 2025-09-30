@@ -1,15 +1,40 @@
 # Development Environment Setup Guide
 
-This guide will help you set up the necessary tools and environment for the Keio Quantitative Macroeconomics course. Follow the instructions specific to your operating system.
+This guide will help you set up the necessary tools and environment for the Keio Quantitative Macroeconomics - Deep Learning Edition course. 
+
+## For Different Student Types
+
+**If you took Spring 2025**: You already have Python, Jupyter, and Git set up. You just need to add MATLAB to your existing setup.
+
+**If you're new to the program**: You'll need to set up everything from scratch, including the same tools used in Spring 2025 plus MATLAB.
 
 ## Required Software
 
 For both Windows and macOS:
-- **Python** (3.8 or newer)
+- **MATLAB** (basic installation - no special toolboxes required)
+- **Python 3.8+** and Jupyter notebooks (for data analysis and visualization)
 - **Git** (version control)
-- **Jupyter Notebooks**
+- **LaTeX** (for document preparation)
 - **Text editor** (VSCode recommended)
 - **Command-line tools**
+
+## Quick Setup for Spring 2025 Students
+
+If you already have Python, Jupyter, and Git from Spring 2025, you just need to add MATLAB:
+
+1. **Install MATLAB**
+   - Download and install MATLAB from [MathWorks](https://www.mathworks.com/products/matlab.html)
+   - Basic installation is sufficient - no special toolboxes required
+   - Verify installation by opening MATLAB and typing: `version`
+
+2. **Test your existing setup**
+   - Open Jupyter: `jupyter notebook`
+   - Test Python: `python --version`
+   - Test Git: `git --version`
+
+That's it! You're ready for the Autumn 2025 course.
+
+## Full Setup Instructions for New Students
 
 ## Setup Instructions for Windows
 
@@ -50,7 +75,12 @@ For both Windows and macOS:
      pip install jupyter numpy pandas matplotlib scipy statsmodels plotly
      ```
 
-5. **Clone the Course Repository (Two options)**
+5. **Install MATLAB**
+   - Download and install MATLAB from [MathWorks](https://www.mathworks.com/products/matlab.html)
+   - Basic installation is sufficient - no special toolboxes required
+   - Verify installation by opening MATLAB and typing: `version`
+
+6. **Clone the Course Repository (Two options)**
 
    **Option A: Using Windows Explorer and Git Bash**
    - Open File Explorer and navigate to your `keio-macro` folder
@@ -109,7 +139,12 @@ For both Windows and macOS:
      pip3 install jupyter numpy pandas matplotlib scipy statsmodels plotly
      ```
 
-7. **Clone the Course Repository**
+7. **Install MATLAB**
+   - Download and install MATLAB from [MathWorks](https://www.mathworks.com/products/matlab.html)
+   - Basic installation is sufficient - no special toolboxes required
+   - Verify installation by opening MATLAB and typing: `version`
+
+8. **Clone the Course Repository**
    - In Terminal, navigate to your course directory: `cd ~/keio-macro`
    - Clone the repository: `git clone https://github.com/tsenga2/keio-quant-macro.git`
    - Navigate into the repository: `cd keio-quant-macro`
@@ -203,23 +238,28 @@ The easiest way to create and manage your GitHub repositories is using VS Code:
 
 After installation, test your environment:
 
-1. **Test Python and Required Packages**
+1. **Test Python and Jupyter**
    - Open Terminal (macOS) or Git Bash (Windows)
-   - Run Python:
-     - On Windows: `python`
-     - On macOS: `python3`
-   - Try importing key packages:
-     ```python
-     import numpy as np
-     import pandas as pd
-     import matplotlib.pyplot as plt
-     print("Setup successful!")
-     exit()
-     ```
-
-2. **Launch Jupyter Notebook**
-   - Open Terminal (macOS) or Git Bash (Windows)
-   - Run:
-     - On Windows: `jupyter notebook`
-     - On macOS: `jupyter notebook`
+   - Test Python:
+     - On Windows: `python --version`
+     - On macOS: `python3 --version`
+   - Test Jupyter: `jupyter notebook`
    - This should open Jupyter in your default web browser
+
+2. **Test MATLAB**
+   - Open MATLAB
+   - Test basic operations:
+     ```matlab
+     % Test basic MATLAB functionality
+     x = linspace(0, 2, 100);
+     y = exp(-2*x);
+     plot(x, y);
+     title('Test Plot');
+     fprintf('MATLAB version: %s\n', version);
+     ```
+   - This should create a plot and display the MATLAB version
+
+3. **Test Git**
+   - Open Terminal (macOS) or Git Bash (Windows)
+   - Run: `git --version`
+   - This should display the Git version

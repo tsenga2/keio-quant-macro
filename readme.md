@@ -54,13 +54,21 @@ This 4-week module focuses on **Neural Networks for Differential Equations** wit
 
 ## Course Materials
 
-Course materials are organized in the `A-DeepLearning/` directory:
+Course materials are organized by type:
 
+### **LectureNotes/**
 - **Macro2b_notes.pdf**: Complete 4-week lecture notes covering neural networks for differential equations
 - **BackPropagation.pdf**: Detailed mathematical treatment of backpropagation algorithm (Week 2)
+
+### **Slides/**
 - **Beamer slides**: Will be added for Weeks 3-4 (ODE/PDE solving and applications)
-- **MATLAB code**: Implementation examples for ODE and PDE solving
-- **Python notebooks**: Data analysis and visualization examples
+
+### **Code-Examples/**
+- **MATLAB implementations**: Neural network code for ODE and PDE solving
+- **Python notebooks**: Data analysis, visualization, and alternative implementations
+
+### **Data/**
+- **Sample datasets**: Economic time series and other data for analysis
 
 All materials will be updated weekly throughout the course.
 
@@ -162,11 +170,11 @@ All materials will be updated weekly throughout the course.
 ## Software Requirements
 
 Students will need to install or have access to:
+- **Python 3.8+** and Jupyter notebooks (primary computational environment)
 - **MATLAB** (basic installation - no special toolboxes required)
 - **Git version control**
 - **LaTeX** (for document preparation)
 - A text editor of your choice (VSCode recommended)
-- **Python** (optional, for data analysis and visualization)
 
 ## Environment Setup
 

@@ -60,6 +60,8 @@ Course materials are organized by type:
 - **Macro2b_notes.pdf**: Complete 4-week lecture notes covering neural networks for differential equations
 - **BackPropagation.pdf**: Detailed mathematical treatment of backpropagation algorithm (Week 2)
 
+*Note: PDF files are available locally but not tracked in git due to file size considerations.*
+
 ### **Slides/**
 - **Beamer slides**: Will be added for Weeks 3-4 (ODE/PDE solving and applications)
 

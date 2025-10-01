@@ -16,12 +16,10 @@ This 4-week module focuses on **Neural Networks for Differential Equations** wit
 
 ### Week 1: From Brains to Perceptrons - The Origins of AI
 - Course overview and motivation for differential equations in economics
-- Two paths to AI: Logic-based vs. Brain-inspired approaches
 - Biological inspiration: neurons and neural networks
 - Early mathematical models: McCulloch-Pitts, Rosenblatt's Perceptron
 - The XOR problem and the first AI winter
 - Japanese contributions: Amari Shun-ichi's pioneering work
-- **Materials**: Lecture notes (Macro2b_notes.pdf)
 
 ### Week 2: The Learning Engine
 - The learning framework: loss functions, gradients, parameter updates
@@ -29,28 +27,18 @@ This 4-week module focuses on **Neural Networks for Differential Equations** wit
 - Gradient descent: the optimization workhorse
 - Variants: batch, stochastic, mini-batch gradient descent
 - Backpropagation: computing gradients efficiently using chain rule
-- Historical note: Amari's contributions to learning theory
-- **Materials**: Detailed backpropagation notes (BackPropagation.pdf)
 
 ### Week 3: Building an ODE Solver
 - Motivation: why neural networks for differential equations?
 - Traditional methods vs. neural networks comparison
 - The model problem: solving first-order ODEs
-- Key innovation: the trial solution method
-- Physics-informed loss function
 - Network architecture and implementation in MATLAB
-- Results analysis and common pitfalls
-- **Materials**: Beamer slides (to be added)
 
 ### Week 4: Extension to PDEs
 - From ODEs to partial differential equations
 - Network architecture for PDEs
 - Application: Black-Scholes equation for option pricing
-- Time transformation for terminal conditions
-- High-dimensional PDEs and the curse of dimensionality
-- Economic applications: heterogeneous agents, multi-asset portfolios
 - Summary and future directions for advanced macroeconomics
-- **Materials**: Beamer slides (to be added)
 
 ## Course Materials
 
@@ -60,10 +48,9 @@ Course materials are organized by type:
 - **Macro2b_notes.pdf**: Complete 4-week lecture notes covering neural networks for differential equations
 - **BackPropagation.pdf**: Detailed mathematical treatment of backpropagation algorithm (Week 2)
 
-*Note: PDF files are available locally but not tracked in git due to file size considerations.*
 
 ### **Slides/**
-- **Beamer slides**: Will be added for Weeks 3-4 (ODE/PDE solving and applications)
+- **Beamer slides**: Will be added for each week
 
 ### **Codes/**
 - **MATLAB implementations**: Neural network code for ODE and PDE solving
